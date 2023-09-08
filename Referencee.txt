@@ -1,0 +1,11 @@
+##LOF  VARIANT PREDICTION :
+     https://github.com/kostkalab/aenmd ;https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10055276/
+     https://pcingola.github.io/SnpEff/se_inputoutput/#loss-of-function-lof-and-nonsense-mediated-decay-nmd-predictions
+     http://aloft.gersteinlab.org/features/#prediction_features
+     https://academic.oup.com/bioinformatics/article/33/14/i389/3953989?searchresult=1#405405824
+     https://academic.oup.com/bioinformatics/article/38/10/2705/6554995?searchresult=1
+
+
+
+##Splicee variant
+   https://academic.oup.com/bioinformatics/article/39/4/btad179/7109800?searchresult=1
