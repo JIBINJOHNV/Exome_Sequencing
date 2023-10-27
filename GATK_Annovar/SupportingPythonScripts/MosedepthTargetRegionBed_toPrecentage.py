@@ -53,6 +53,7 @@ average_depth.columns=list(range(1, 101))
 average_depth.columns=[str(x)+"_X" for x in average_depth ]
 average_depth=average_depth.reset_index()
 average_depth=average_depth.rename(columns={"index":"sample"})
+average_depth=average_depth.sort_values(by="20_X")
 
 
 average_depth.to_csv(Folder+"Average_Exome_coverage_at_differentThreshold.csv",index=None)
