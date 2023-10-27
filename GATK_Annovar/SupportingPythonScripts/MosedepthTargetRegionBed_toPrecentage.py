@@ -35,3 +35,22 @@ for i in files :
     File[Columns.drop(DropCol)]=File[Columns.drop(DropCol)].astype(int)
     
     File.to_csv(i[:-7]+"_percentage_bed.tsv",sep="\t",float_format='%.2f',index=False)
+
+
+##This script will calculate mean depth at different threshold across samples
+coverage_dict={}
+
+files=glob.glob(Folder+"*_recal.mosdepth.region.dist.txt")
+
+for file in files:
+    df =pd.read_csv(file,sep="\t",header=None)
+    df=df[ (df[0]=="total") & (df[1]<101)].sort_values(by=1).iloc[1:,]
+    sample=file.split("/")[-1].replace("_recal.mosdepth.region.dist.txt","")
+    coverage_dict[sample]=df[2].to_list()
+
+average_depth=pd.DataFrame(coverage_dict).T
+average_depth.columns=list(range(1, 101))
+average_depth.columns=[str(x)+"_X" for x in average_depth ]
+
+
+average_depth.to_csv(Folder+"Average_Exome_coverage_at_differentThreshold.csv",index=None)
