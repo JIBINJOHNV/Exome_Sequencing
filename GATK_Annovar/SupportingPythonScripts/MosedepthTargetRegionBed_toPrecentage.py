@@ -50,6 +50,8 @@ for file in files:
 
 average_depth=pd.DataFrame(coverage_dict).T
 average_depth.columns=list(range(1, 101))
+average_depth=average_depth.reset_index()
+average_depth=average_depth.rename(columns={"index":"sample"})
 average_depth.columns=[str(x)+"_X" for x in average_depth ]
 
 
